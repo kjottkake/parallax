@@ -8,7 +8,10 @@ let wavebg = document.getElementById("wavebg");
 let wavefg = document.getElementById("wavefg");
 
 //selecting third image element
-let trash = document.getElementById("trashbg");
+let plasticsbg1 = document.getElementById("plastics01");
+let plasticsbg2 = document.getElementById("plastics02");
+let plasticsbg3 = document.getElementById("plastics03");
+let plasticsfg = document.getElementById("plastics04");
 
 
 //function for when mouse scrolls, then object moves.
@@ -21,7 +24,7 @@ let parallax1 = window.addEventListener('scroll', function(){
     rock.style.top = value1 * 0.1 + 'px';
 })
 
-
+//section image element
 let parallax2 = window.addEventListener('scroll', function(){
     var value2 = window.scrollY;
     console.log("windowY2: " +value2)
@@ -32,10 +35,15 @@ let parallax2 = window.addEventListener('scroll', function(){
     }
 })
 
-
+//third and final image element
 let parallax3 = window.addEventListener('scroll', function(){
-    var value3 = window.scrollY - 2500;
+    var value3 = window.scrollY;
     console.log("windowY3: " +value3)
-    //first image element
-    // trash.style.left = value3 * 0.3 + 'px';
+    if (value3 >= 2500){
+        // plasticsbg1.style.right = (value3 - 2500)  * 0.9 + 'px';
+        // plasticsbg2.style.right = (value3 - 2500)  * 0.9 + 'px';
+        plasticsbg3.style.top = -(value3 - 2500)  * 0.1 + 'px';
+        plasticsfg.style.top = (value3 - 2500)  * 0.1 + 'px';
+    }
+    
 })
