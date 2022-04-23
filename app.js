@@ -28,6 +28,7 @@ let parallax1 = window.addEventListener('scroll', function(){
 let parallax2 = window.addEventListener('scroll', function(){
     var value2 = window.scrollY;
     console.log("windowY2: " +value2)
+    //if value2 which is the location of scroll is at the position where second image is, then start effect
     if (value2 >= 1300){
     //first image element
     wavebg.style.top= (value2 - 1300)  * 0.3 + 'px';
